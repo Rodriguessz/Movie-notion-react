@@ -15,7 +15,7 @@ export const Home = () => {
                     <h1>Meus Filmes</h1>
                     
                     <div>
-                        <Button icon={FiPlus} title="Adicionar" />
+                        <Button icon={FiPlus} title="Adicionar" to="/new"/>
                     </div>
                 
                 </Title>

@@ -6,15 +6,16 @@ import { ThemeProvider } from 'styled-components'
 import { GlobalStyle } from './styles/global'
 import { theme } from './styles/theme'
 
-//Pages
-import { Home } from './pages/Home'
+//Routes
+import { Routes } from './routes'
+
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Home />
+      <Routes />
     </ThemeProvider>
   </StrictMode>,
 )

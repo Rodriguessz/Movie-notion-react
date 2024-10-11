@@ -18,9 +18,11 @@ export const SignUp = () => {
 
                     <h2>Crie sua conta</h2>
                     
-                    <Input icon={FiUser} placeholder="Nome"/>
-                    <Input icon={FiMail} placeholder="E-mail"/>
-                    <Input icon={FiLock} placeholder="Senha"/>
+                    <div>
+                        <Input icon={FiUser} placeholder="Nome"/>
+                        <Input icon={FiMail} placeholder="E-mail"/>
+                        <Input icon={FiLock} placeholder="Senha"/>
+                    </div>
 
                     <Button title="Cadastrar" type="button" />
 

@@ -19,7 +19,11 @@ export const Form = styled.form`
 
     padding: 0 13.4rem;
 
-
+    > div {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem
+    }
 
     > h1 {
         color: ${({theme}) => theme.COLORS.RED};

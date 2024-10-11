@@ -10,4 +10,6 @@ export const Container = styled.span`
     border-radius: 1rem;
 
     margin-right: .8rem;
+
+    font-size: 1.2rem;
 `

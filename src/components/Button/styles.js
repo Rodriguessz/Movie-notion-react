@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.button`
+import { Link } from "react-router-dom";
+
+export const Container = styled(Link)`
 
     width: 100%;
 
@@ -12,11 +14,11 @@ export const Container = styled.button`
     border: none;
     border-radius: 1rem;
 
-    background-color: ${({theme}) => theme.COLORS.RED};
+    background-color: ${({theme, $isdelete}) => $isdelete ? theme.COLORS.BACKGROUND_900 : theme.COLORS.RED};
 
+    color: ${({theme, $isdelete}) => $isdelete ? theme.COLORS.RED : theme.COLORS.GRAY_300};
     font-size: 1.6rem;
     font-weight: 500;
-    color: ${({theme}) => theme.COLORS.GRAY_300};
 
     padding: 1.6rem;
 
