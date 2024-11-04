@@ -45,7 +45,7 @@ export const SignIn = () => {
                 
                     <Button title="Entrar" onClick={handleSignIn} />
 
-                    <ButtonText title="Criar conta" />
+                    <ButtonText title="Criar conta" to="/register" />
                 </Form>
 
                 <Background />

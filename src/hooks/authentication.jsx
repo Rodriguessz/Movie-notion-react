@@ -1,5 +1,7 @@
 import { useState , useEffect, useContext, createContext } from 'react'
 
+import { useNavigate } from 'react-router-dom';
+
 import { api } from '../services/api'
 
 
@@ -39,6 +41,14 @@ const AuthProvider = ({children}) => {
 
     }
 
+    const signOut = async () => {
+
+        localStorage.removeItem("@rocketmovies:user")
+        localStorage.removeItem("@rocketmovies:token")
+
+        setData({})
+    }
+
 
     //Verify if the user is already logged on the system.
     //Triggered every component re-render
@@ -59,8 +69,7 @@ const AuthProvider = ({children}) => {
     
     return(
         <>
-        
-            <AuthContext.Provider value={{signIn, user: data.user}}>
+            <AuthContext.Provider value={{signIn, signOut ,user: data.user}}>
                 {children}
             </AuthContext.Provider>
         </>

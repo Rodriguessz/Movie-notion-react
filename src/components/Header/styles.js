@@ -40,9 +40,12 @@ export const Profile = styled.div`
         justify-content: center;
         gap: 0.5rem;
 
-        > a {
-            align-self: flex-end;
+        > button {
+            align-self: flex-start;
             color: ${({theme}) => theme.COLORS.GRAY_100};  
+            border: none;
+            background: transparent;
+            font-size: 1.4rem;
         }
     }
 

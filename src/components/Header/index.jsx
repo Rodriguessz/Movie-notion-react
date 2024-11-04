@@ -1,3 +1,7 @@
+import { useAuth } from "../../hooks/authentication";
+import { useNavigate } from "react-router-dom";
+
+
 import { Container, Profile } from "./styles";
 import { Input } from '../Input'
 
@@ -7,6 +11,19 @@ import { Link } from "react-router-dom";
 
 
 export const Header = () => {
+
+    const { signOut } = useAuth();
+    const naivagate = useNavigate()
+
+
+    function handleSignOut(){
+        signOut();
+        naivagate("/");
+    }
+
+
+
+
     return (
         <>
             <Container>
@@ -18,7 +35,7 @@ export const Header = () => {
 
                     <div>
                         <strong>Enzo Rodrigues</strong>
-                        <a href="#">Sair</a>
+                        <button type="button" onClick={handleSignOut}> Sair </button>
                     </div>
 
                     <Link to="/profile">
