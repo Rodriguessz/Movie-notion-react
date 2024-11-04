@@ -5,7 +5,7 @@ export const Button = ({ icon: Icon, title, isDelete, ...rest}) => {
 
     return(
         <>
-            <Container $isdelete={isDelete} {...rest}>
+            <Container type="button" $isdelete={isDelete} {...rest}>
                 {Icon && <Icon />}
                 {title}
             </Container>

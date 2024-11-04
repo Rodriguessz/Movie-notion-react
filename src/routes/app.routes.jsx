@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 
 import { Home } from '../pages/Home'
 import { Profile } from '../pages/Profile'
@@ -13,6 +13,11 @@ export const AppRoutes = () => {
                 <Route path='/profile' element={<Profile />} />
                 <Route path='/details/:id' element={<Details />} />
                 <Route path='/new' element={<New />} />
+
+                {/* Pattern to treat unvaible routes */}
+                <Route path='*' element={<Navigate to="/" />} />
+
+        
             </Routes>
         </>
     )

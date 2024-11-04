@@ -9,13 +9,18 @@ import { theme } from './styles/theme'
 //Routes
 import { Routes } from './routes'
 
+//Authentication Context provider
+import { AuthProvider } from './hooks/authentication'
+
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Routes />
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
     </ThemeProvider>
   </StrictMode>,
 )

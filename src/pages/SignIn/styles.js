@@ -27,7 +27,7 @@ export const Form = styled.form`
 
 
     > h1 {
-        color: ${({theme}) => theme.COLORS.RED};
+        color: ${({ theme }) => theme.COLORS.RED};
         font-size: 4rem;
         font-weight: 700;
 
@@ -35,7 +35,7 @@ export const Form = styled.form`
     }
 
     > p {
-        color: ${({theme}) => theme.COLORS.GRAY_200};
+        color: ${({ theme }) => theme.COLORS.GRAY_200};
         font-size: 1.4rem;
     }
 
@@ -45,10 +45,11 @@ export const Form = styled.form`
         font-weight: 500;
         font-size: 2.4rem;
     }
-
+     
     > a { 
-        
-        margin: 0 auto;
+    
+        margin: 1.8rem auto;
+
     }
 
 `
