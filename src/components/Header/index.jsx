@@ -1,5 +1,9 @@
+import { useState } from "react";
+
 import { useAuth } from "../../hooks/authentication";
 import { useNavigate } from "react-router-dom";
+
+import { api } from "../../services/api";
 
 
 import { Container, Profile } from "./styles";
@@ -9,10 +13,12 @@ import { FiSearch } from 'react-icons/fi'
 
 import { Link } from "react-router-dom";
 
+import avatarPlaceHolder from '../../assets/svg/avatar_placeholder.svg'
+
 
 export const Header = () => {
 
-    const { signOut } = useAuth();
+    const { signOut, user } = useAuth();
     const naivagate = useNavigate()
 
 
@@ -21,8 +27,9 @@ export const Header = () => {
         naivagate("/");
     }
 
+    const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceHolder; 
 
-
+    const [avatarPreview, setAvatarPreview] = useState(avatarUrl)
 
     return (
         <>
@@ -34,12 +41,12 @@ export const Header = () => {
                 <Profile>
 
                     <div>
-                        <strong>Enzo Rodrigues</strong>
+                        <strong>{user.name}</strong>
                         <button type="button" onClick={handleSignOut}> Sair </button>
                     </div>
 
                     <Link to="/profile">
-                    <img src="https://github.com/rodriguessz.png" alt="Foto do usuário" />
+                        <img src={avatarPreview} alt="Foto do usuário" />
                     </Link>
 
                 </Profile>
