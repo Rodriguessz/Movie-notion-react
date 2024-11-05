@@ -34,6 +34,13 @@ export const Form = styled.form`
         gap: 4rem;
     }
 
+    > div.actions {
+
+        > button {
+            width: 30%;
+        }
+    }
+
 `
 
 
