@@ -47,9 +47,7 @@ export const Form = styled.form`
     }
      
     > a { 
-    
         margin: 1.8rem auto;
-
     }
 
 `

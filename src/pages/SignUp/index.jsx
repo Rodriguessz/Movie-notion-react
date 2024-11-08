@@ -29,7 +29,7 @@ export const SignUp = () => {
             await api.post("/users/create", { name , email ,password})
             alert("Account successfuly created!")
             navigate("/");
-        }catch{
+        }catch(error){
             if(error.response){
                 alert(error.response.data.message);
             }else{

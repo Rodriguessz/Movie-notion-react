@@ -12,9 +12,14 @@ import { Link } from "react-router-dom";
 
 export const Home = () => {
 
+    const [movies, setMovies] = useState([]);
+
     useEffect(() => {
         async function fetchMovies(){
             const { data } = await api.get("/movies");
+            setMovies(data);
+            console.log(data)
+
         }
 
         fetchMovies();
@@ -34,12 +39,18 @@ export const Home = () => {
                         </Link>
                     </div>
                 
-                </Title>
+                </Title> 
 
-                <main>
-                    <Card data={{title: "Interestellar", tags: [{id:1, title: "Ficção Científica"}, {id:2, title: "Drama"}] }} type="button"/>
-                </main>
+                {movies.length > 0 &&
+                    <main>
+                    {
+                        movies.map(movie => <Card  key={String(movie.id)} data={movie} type="button"/>)
+                    }
+        
+                    </main>
 
+                }
+                
             </Container>
         </>
     )
