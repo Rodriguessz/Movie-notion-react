@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 import avatarPlaceHolder from '../../assets/svg/avatar_placeholder.svg'
 
 
-export const Header = () => {
+export const Header = ({onSearch}) => {
 
     const { signOut, user } = useAuth();
     const naivagate = useNavigate()
@@ -36,7 +36,7 @@ export const Header = () => {
             <Container>
                 <h2>RocketMovies</h2>
 
-                <Input icon={FiSearch} placeholder="Pesquisar pelo título" />
+                <Input icon={FiSearch} placeholder="Pesquisar pelo título" onChange={onSearch} />
 
                 <Profile>
 

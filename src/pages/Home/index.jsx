@@ -13,22 +13,33 @@ import { Link } from "react-router-dom";
 export const Home = () => {
 
     const [movies, setMovies] = useState([]);
+    const [title, setTitle] = useState("");
+
 
     useEffect(() => {
         async function fetchMovies(){
             const { data } = await api.get("/movies");
             setMovies(data);
             console.log(data)
-
         }
 
         fetchMovies();
     }, [])
 
+
+    useEffect(() => {
+        async function fetchMovies(){
+            const { data } = await api.get(`/movies?title=${title}`)
+            setMovies(data)
+        }
+
+        fetchMovies();
+    }, [title])
+
     return(
         <>
             <Container>
-                <Header />
+                <Header onSearch={e => setTitle(e.target.value)}/>
 
                 <Title>
                     <h1>Meus Filmes</h1>
