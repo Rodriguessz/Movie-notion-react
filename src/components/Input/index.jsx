@@ -1,10 +1,10 @@
 import { Container } from './styles'
 
 
-export const Input = ({icon : Icon, ...rest}) => {
+export const Input = ({icon : Icon, visible = true, ...rest}) => {
     return(
         <>  
-            <Container>
+            <Container visible={String(visible)}>
                 {Icon && <Icon />}
                 <input {...rest} />
             </Container>

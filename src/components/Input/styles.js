@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
 
-    display: flex;
+    display: ${({visible}) => visible == "true" ? "flex" : "none"};
     align-items: center;
     gap: 1.2rem;
 
@@ -40,6 +40,11 @@ export const Container = styled.div`
         &:focus{
             border: 0;
             outline: 0;
+        }
+
+        &:disabled{
+            opacity: 50%;
+            cursor: not-allowed;
         }
         
     }

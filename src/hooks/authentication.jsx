@@ -52,8 +52,7 @@ const AuthProvider = ({ children }) => {
     const updateProfile = async ({ user, avatarFile }) => {
 
         try {
-            console.log(user)
-
+       
             if (avatarFile) {
                 //Create a multipart/form-data to sent files on request;
                 const uploadForm = new FormData();

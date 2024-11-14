@@ -1,4 +1,5 @@
 import { useEffect, useState} from "react";
+import {useNavigate} from 'react-router-dom'
 
 import { api } from '../../services/api';
 
@@ -14,13 +15,16 @@ export const Home = () => {
 
     const [movies, setMovies] = useState([]);
     const [title, setTitle] = useState("");
+    const navigate = useNavigate();
 
+    const handleMovieDetails = (movieId) => {
+        navigate(`details/${movieId}`)
+    }
 
     useEffect(() => {
         async function fetchMovies(){
             const { data } = await api.get("/movies");
             setMovies(data);
-            console.log(data)
         }
 
         fetchMovies();
@@ -55,7 +59,7 @@ export const Home = () => {
                 {movies.length > 0 &&
                     <main>
                     {
-                        movies.map(movie => <Card  key={String(movie.id)} data={movie} type="button"/>)
+                        movies.map(movie => <Card  key={String(movie.id)} onClick={() => handleMovieDetails(movie.id)} data={movie} type="button"/>)
                     }
         
                     </main>

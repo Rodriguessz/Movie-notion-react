@@ -4,6 +4,7 @@ import { Tag } from '../Tag'
 import { RiStarFill, RiStarLine } from 'react-icons/ri'
 
 export const Card = ({ data, ...rest}) => {
+
     return(
         <>
             <Container {...rest}>

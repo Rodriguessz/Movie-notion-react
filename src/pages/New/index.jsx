@@ -60,7 +60,7 @@ export const New = () => {
         <>
 
             <Container>
-                <Header />
+                <Header visible={false}/>
 
                 <main>
                     <ButtonText to="/" icon={FiArrowLeft} title="Voltar" />
